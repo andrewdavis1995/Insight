@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Insight.Views.DoubleBarGraph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="Insight.Views"
+             mc:Ignorable="d" 
+             xmlns:custom="clr-namespace:Insight.Views"
+             d:DesignHeight="200" d:DesignWidth="540">
+    <Grid Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <custom:BarChartItem Grid.Column="0"/>
+        <custom:BarChartItem Grid.Column="1"/>
+        <custom:BarChartItem Grid.Column="2"/>
+        <custom:BarChartItem Grid.Column="3"/>
+        <custom:BarChartItem Grid.Column="4"/>
+        <custom:BarChartItem Grid.Column="5"/>
+        <custom:BarChartItem Grid.Column="6"/>
+        <custom:BarChartItem Grid.Column="7"/>
+        <custom:BarChartItem Grid.Column="8"/>
+        <custom:BarChartItem Grid.Column="10"/>
+        <custom:BarChartItem Grid.Column="11"/>
+        <custom:BarChartItem Grid.Column="12"/>
+        <custom:BarChartItem Grid.Column="13"/>
+        <custom:BarChartItem Grid.Column="14"/>
+        <custom:BarChartItem Grid.Column="15"/>
+        <custom:BarChartItem Grid.Column="16"/>
+        <custom:BarChartItem Grid.Column="17"/>
+        <custom:BarChartItem Grid.Column="18"/>
+        <custom:BarChartItem Grid.Column="19"/>
+        <Label Grid.Column="9" Background="#55000000" Width="3" VerticalAlignment="Bottom" Height="20"></Label>
+        <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">5'</Label>
+        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">10'</Label>
+        <Label Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">15'</Label>
+        <Label Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">20'</Label>
+        <Label Grid.Column="4" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">25'</Label>
+        <Label Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">30'</Label>
+        <Label Grid.Column="6" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">35'</Label>
+        <Label Grid.Column="7" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">40'</Label>
+        <Label Grid.Column="8" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">45'</Label>
+        <Label Grid.Column="10" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">50'</Label>
+        <Label Grid.Column="11" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">55'</Label>
+        <Label Grid.Column="12" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">60'</Label>
+        <Label Grid.Column="13" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">65'</Label>
+        <Label Grid.Column="14" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">70'</Label>
+        <Label Grid.Column="15" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">75'</Label>
+        <Label Grid.Column="16" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">80'</Label>
+        <Label Grid.Column="17" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">85'</Label>
+        <Label Grid.Column="18" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">90'</Label>
+        <Label Grid.Column="19" Grid.Row="1" VerticalAlignment="Center" FontFamily="Cambria" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">90+'</Label>
+   
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Insight.Views.DateLabel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Insight.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="500">
+    <Grid Background="{DynamicResource TertiaryBrush}">
+        <TextBlock FontFamily="Cambria" Name="LblDate" VerticalAlignment="Center" FontSize="14" Foreground="#ffffff" Margin="5">Date</TextBlock>
+    </Grid>
+</UserControl>

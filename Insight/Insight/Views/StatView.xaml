@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Insight.Views.StatView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Insight.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="28" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Margin="5" Name="imgBadge"></Image>
+        <TextBlock Name="lblTeam" Grid.Column="1" Foreground="{DynamicResource TextBrush}" FontSize="14" VerticalAlignment="Center" Margin="10, 0, 0, 0" FontFamily="Cambria">Team Name</TextBlock>
+        <TextBlock Name="lblScore" Grid.Column="2" Foreground="{DynamicResource TextBrush}" FontSize="14" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">38</TextBlock>
+    </Grid>
+</UserControl>

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Insight.Views.BarChartItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Insight.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="50">
+
+    <Grid Grid.Column="0" Margin="5, 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Name="GreenSection" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="40" Background="#2DB52B "/>
+        <Label Name="RedSection" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="40" Background="#f0281e"/>
+    </Grid>
+
+</UserControl>

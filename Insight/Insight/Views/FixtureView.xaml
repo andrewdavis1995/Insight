@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Insight.Views.FixtureView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Insight.Views"
+             mc:Ignorable="d" 
+             Background="Transparent"
+             d:DesignHeight="50" d:DesignWidth="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="5" Name="txtHomeTeam" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" FontFamily="Cambria" FontSize="12" Foreground="#0a0a0a">Team Name</TextBlock>
+            <TextBlock Margin="5" Name="txtAwayTeam" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="2" FontFamily="Cambria" FontSize="12" Foreground="#0a0a0a">Team Name 2</TextBlock>
+            <TextBlock Margin="5" Name="txtScore" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" FontFamily="Cambria" FontSize="20" Foreground="#0a0a0a">0-0</TextBlock>
+            
+
+        </Grid>
+        
+        <TextBlock Margin="5" Name="txtKickoff" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#232323" FontFamily="Cambria" FontSize="10" Grid.Row="1">15:00</TextBlock>
+
+        <Image Margin="5" Name="imgHomeBadge" Grid.Column="1"/>
+        <Image Margin="5" Name="imgAwayBadge" Grid.Column="4"/>
+       
+    </Grid>
+</UserControl>
