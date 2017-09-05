@@ -20,18 +20,6 @@ namespace Insight.Models
 
     public class League
     {
-        #region Variables for tracking the loading
-        const int BETS_LOADING_TIME_WEIGHT = 35;
-        const int TABLE_LOADING_TIME_WEIGHT = 10;
-        const int FIXTURES_LOADING_TIME_WEIGHT = 20;
-        const int RESULTS_LOADING_TIME_WEIGHT = 35; // these should add up to the height of the overlay label
-        // How much progress is left - give each process a different weighting in constants above
-        int RemainingProgress = 100;
-        // callbacks and labels required
-        Action<Label, int> callback;
-        Label label;
-        #endregion
-
         #region Attributes
         public string LeagueName { get; }
         public string SkySportsName { get; }
@@ -41,12 +29,9 @@ namespace Insight.Models
         public List<Fixture> Results { get; set; } = new List<Fixture>();
         public List<string> PossibleBets { get; set; } = new List<string>();
         #endregion
-
-
-        public League(Action<Label, int> timerCallback, Label lbl, string name, string skyName, int numTeams)
+        
+        public League(string name, string skyName, int numTeams)
         {
-            callback = timerCallback;
-            label = lbl;
             LeagueName = name;
             NumTeams = numTeams;
             SkySportsName = skyName;
@@ -95,31 +80,22 @@ namespace Insight.Models
             {
                 of.GetBets(link); // thread this
             }
-
-            RemainingProgress -= BETS_LOADING_TIME_WEIGHT;
-            callback(label, RemainingProgress);
+            
         }
 
         void LoadFixtures()
         {
             var fixtureFetcher = new FixturesFetcher();
             Fixtures = fixtureFetcher.GetFixtures(SkySportsName);
-
-            RemainingProgress -= FIXTURES_LOADING_TIME_WEIGHT;
-            callback(label, RemainingProgress);
+            
         }
 
         void LoadResults()
         {
             var resultsFetcher = new ResultsFetcher();
             Results = resultsFetcher.GetResults(SkySportsName);
-
-            RemainingProgress -= RESULTS_LOADING_TIME_WEIGHT;
-            callback(label, RemainingProgress);
-
+            
             Table = new StatFetcher().GetTable(this.Results, TableType.FullTable);
-            RemainingProgress -= TABLE_LOADING_TIME_WEIGHT;
-            callback(label, RemainingProgress);
 
         }
         

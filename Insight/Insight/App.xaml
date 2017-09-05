@@ -6,7 +6,7 @@
     <Application.Resources>
         <Color x:Key="PrimaryColour">#e9ebea</Color>
         <Color x:Key="SecondaryColour">#283e4a</Color>
-        <Color x:Key="TertiaryColour">#225a77</Color>
+        <Color x:Key="TertiaryColour">#20c3b3</Color>
         <Color x:Key="TextColour">#1f1f1f</Color>
         <Color x:Key="DarkOverlay">#18000000</Color>
         
