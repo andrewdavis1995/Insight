@@ -26,14 +26,14 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Margin="5" Name="txtHomeTeam" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" FontFamily="Cambria" FontSize="12" Foreground="#0a0a0a">Team Name</TextBlock>
-            <TextBlock Margin="5" Name="txtAwayTeam" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="2" FontFamily="Cambria" FontSize="12" Foreground="#0a0a0a">Team Name 2</TextBlock>
-            <TextBlock Margin="5" Name="txtScore" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" FontFamily="Cambria" FontSize="20" Foreground="#0a0a0a">0-0</TextBlock>
+            <TextBlock Margin="5" Name="txtHomeTeam" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="12" Foreground="#0a0a0a">Team Name</TextBlock>
+            <TextBlock Margin="5" Name="txtAwayTeam" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="2" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="12" Foreground="#0a0a0a">Team Name 2</TextBlock>
+            <TextBlock Margin="5" Name="txtScore" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="20" Foreground="#0a0a0a">0-0</TextBlock>
             
 
         </Grid>
         
-        <TextBlock Margin="5" Name="txtKickoff" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#232323" FontFamily="Cambria" FontSize="10" Grid.Row="1">15:00</TextBlock>
+        <TextBlock Margin="5" Name="txtKickoff" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#232323" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="10" Grid.Row="1">15:00</TextBlock>
 
         <Image Margin="5" Name="imgHomeBadge" Grid.Column="1"/>
         <Image Margin="5" Name="imgAwayBadge" Grid.Column="4"/>

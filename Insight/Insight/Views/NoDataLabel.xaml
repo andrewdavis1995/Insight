@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Label FontFamily="Cambria" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" VerticalAlignment="Stretch" FontSize="12" Foreground="{DynamicResource TextBrush}">Nothing to display</Label>    
+        <Label FontFamily="pack://application:,,,/Fonts/#Lato" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" VerticalAlignment="Stretch" FontSize="12" Foreground="{DynamicResource TextBrush}">Nothing to display</Label>    
     </Grid>
 </UserControl>

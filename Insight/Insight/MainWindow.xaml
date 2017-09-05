@@ -64,7 +64,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock x:Name="cmdLeftChevron" MouseDown="MoveLeft" Grid.Column="0" Margin="3" TextWrapping="Wrap" Text="&lt;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="{DynamicResource TextBrush}"/>
-                <TextBlock x:Name="txtCompetitionName" Grid.Column="1" Margin="3" TextWrapping="Wrap" Text="Championship" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="{DynamicResource TextBrush}" FontFamily="Cambria"/>
+                <TextBlock x:Name="txtCompetitionName" Grid.Column="1" Margin="3" TextWrapping="Wrap" Text="Championship" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="{DynamicResource TextBrush}" FontFamily="pack://application:,,,/Fonts/#Lato"/>
                 <TextBlock x:Name="cmdRightChevron" MouseDown="MoveRight" Grid.Column="2" Margin="3" TextWrapping="Wrap" Text=">" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="{DynamicResource TextBrush}"/>
               
             </Grid>

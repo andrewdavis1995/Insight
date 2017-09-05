@@ -22,16 +22,16 @@
         </Grid.ColumnDefinitions>
 
         <Image Margin="5" Name="imgBadge" Grid.Column="1"></Image>
-        <TextBlock Name="lblTeam" Grid.Column="2" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="8, 0, 0, 0" FontFamily="Cambria">Team Name</TextBlock>
-        <TextBlock Name="lblPosition" Grid.Column="0" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="8, 0, 4, 0" FontFamily="Cambria" HorizontalAlignment="Center">1</TextBlock>
-        <TextBlock Name="lblGames" Grid.Column="3" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">38</TextBlock>
-        <TextBlock Name="lblWins" Grid.Column="4" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">108</TextBlock>
-        <TextBlock Name="lblDraws" Grid.Column="5" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">108</TextBlock>
-        <TextBlock Name="lblLosses" Grid.Column="6" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">108</TextBlock>
-        <TextBlock Name="lblGf" Grid.Column="7" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">108</TextBlock>
-        <TextBlock Name="lblGa" Grid.Column="8" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">108</TextBlock>
-        <TextBlock Name="lblGd" Grid.Column="9" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">108</TextBlock>
-        <TextBlock Name="lblPoints" Grid.Column="10" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">108</TextBlock>
+        <TextBlock Name="lblTeam" Grid.Column="2" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="8, 0, 0, 0" FontFamily="pack://application:,,,/Fonts/#Lato">Team Name</TextBlock>
+        <TextBlock Name="lblPosition" Grid.Column="0" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="8, 0, 4, 0" FontFamily="pack://application:,,,/Fonts/#Lato" HorizontalAlignment="Center">1</TextBlock>
+        <TextBlock Name="lblGames" Grid.Column="3" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">38</TextBlock>
+        <TextBlock Name="lblWins" Grid.Column="4" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
+        <TextBlock Name="lblDraws" Grid.Column="5" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
+        <TextBlock Name="lblLosses" Grid.Column="6" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
+        <TextBlock Name="lblGf" Grid.Column="7" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
+        <TextBlock Name="lblGa" Grid.Column="8" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
+        <TextBlock Name="lblGd" Grid.Column="9" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
+        <TextBlock Name="lblPoints" Grid.Column="10" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
         
     </Grid>
 </UserControl>

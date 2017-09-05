@@ -47,11 +47,8 @@ C:\Users\asuth\Documents\Visual Studio 2015\Projects\Insight\Insight\obj\Debug\V
 C:\Users\asuth\Documents\Visual Studio 2015\Projects\Insight\Insight\obj\Debug\Views\DateLabel.g.cs
 C:\Users\asuth\Documents\Visual Studio 2015\Projects\Insight\Insight\obj\Debug\Views\DateLabel.baml
 C:\Users\asuth\Documents\Insight\Insight\Insight\bin\Debug\Insight.exe.config
-C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.exe
-C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.pdb
 C:\Users\asuth\Documents\Insight\Insight\Insight\bin\Debug\Insight.exe
 C:\Users\asuth\Documents\Insight\Insight\Insight\bin\Debug\Insight.pdb
-C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.csprojResolveAssemblyReference.cache
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\LeagueSelection.g.cs
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\LeagueView.g.cs
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\MainWindow.g.cs
@@ -94,3 +91,6 @@ C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\TeamView.baml
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.g.resources
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.Properties.Resources.resources
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.csproj.GenerateResource.Cache
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.exe
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.pdb
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.csprojResolveAssemblyReference.cache

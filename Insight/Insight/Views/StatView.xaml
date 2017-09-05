@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
         <Image Margin="5" Name="imgBadge"></Image>
-        <TextBlock Name="lblTeam" Grid.Column="1" Foreground="{DynamicResource TextBrush}" FontSize="14" VerticalAlignment="Center" Margin="10, 0, 0, 0" FontFamily="Cambria">Team Name</TextBlock>
-        <TextBlock Name="lblScore" Grid.Column="2" Foreground="{DynamicResource TextBrush}" FontSize="14" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="Cambria">38</TextBlock>
+        <TextBlock Name="lblTeam" Grid.Column="1" Foreground="{DynamicResource TextBrush}" FontSize="14" VerticalAlignment="Center" Margin="10, 0, 0, 0" FontFamily="pack://application:,,,/Fonts/#Lato">Team Name</TextBlock>
+        <TextBlock Name="lblScore" Grid.Column="2" Foreground="{DynamicResource TextBrush}" FontSize="14" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">38</TextBlock>
     </Grid>
 </UserControl>

@@ -16,11 +16,14 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="lblHeading" Text="Loading..." Margin="50" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Foreground="White" FontFamily="Cambria" FontSize="32" HorizontalAlignment="Center"/>
+        
+        <TextBlock x:Name="lblHeading" Text="Loading" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="1" Foreground="White" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="32" HorizontalAlignment="Center"/>
 
     </Grid>
 </Window>

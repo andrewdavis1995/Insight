@@ -25,14 +25,67 @@ namespace Insight.Views
     /// </summary>
     public partial class LoadingScreen : Window
     {
+        GifBitmapDecoder _gifDecoder;
+        System.Timers.Timer _loadingTimer;
+
+        private int _animCount = 0;
+        private int _animCount2 = 2;
+        private int _animCount3 = 4;
+        public delegate void UpdateAnimation();
         public delegate void MoveToNextPageDelegate();
 
         public LoadingScreen()
         {
+            try
+            {
+                _gifDecoder = new GifBitmapDecoder(new Uri("pack://application:,,,/Insight;component/Resources/coinGif.gif"), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
+                //imgGif.Source = _gifDecoder.Frames[0];
+
+                // setup the timer for the icon
+                _loadingTimer = new System.Timers.Timer();
+                _loadingTimer.Elapsed += _LoadingTimer_Elapsed;
+                _loadingTimer.Interval = 80;
+                //_loadingTimer.Start();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
             InitializeComponent();
             LoadData();
-        } 
-                
+        }
+
+
+        private void ChangeAnimFrame()
+        {
+            if (_animCount >= _gifDecoder.Frames.Count - 1)
+            {
+                _animCount = 0; // go back to start
+            }
+            if (_animCount2 >= _gifDecoder.Frames.Count - 1)
+            {
+                _animCount2 = 0; // go back to start
+            }
+            if (_animCount3 >= _gifDecoder.Frames.Count - 1)
+            {
+                _animCount3 = 0; // go back to start
+            }
+            //imgGif.Source = _gifDecoder.Frames[_animCount];
+            //imgGif2.Source = _gifDecoder.Frames[_animCount2];
+            //imgGif3.Source = _gifDecoder.Frames[_animCount3];
+        }
+
+
+        private void _LoadingTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            _animCount++;
+            _animCount2++;
+            _animCount3++;
+            //imgGif.Dispatcher.Invoke(new UpdateAnimation(ChangeAnimFrame));
+        }
+
+
         void StartProcess()
         {
 

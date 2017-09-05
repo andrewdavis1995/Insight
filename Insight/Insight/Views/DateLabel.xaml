@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="500">
     <Grid Background="{DynamicResource TertiaryBrush}">
-        <TextBlock FontFamily="Cambria" Name="LblDate" VerticalAlignment="Center" FontSize="14" Foreground="#ffffff" Margin="5">Date</TextBlock>
+        <TextBlock FontFamily="pack://application:,,,/Fonts/#Lato" Name="LblDate" VerticalAlignment="Center" FontSize="14" Foreground="#ffffff" Margin="5">Date</TextBlock>
     </Grid>
 </UserControl>
