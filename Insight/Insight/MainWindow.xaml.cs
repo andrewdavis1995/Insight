@@ -33,6 +33,9 @@ namespace Insight
             InitializeComponent();
             InitialiseButtons();
             DisplayTable();
+
+            var oddsads = LeagueHolder.LeagueList["Premier League"];
+            var sdfds = 0;
         }
 
         private void InitialiseButtons()

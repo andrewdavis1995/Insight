@@ -27,7 +27,7 @@ namespace Insight.Models
         public List<TableItem> Table { get; set; } = new List<TableItem>();
         public List<Fixture> Fixtures { get; set; } = new List<Fixture>();
         public List<Fixture> Results { get; set; } = new List<Fixture>();
-        public List<string> PossibleBets { get; set; } = new List<string>();
+        public List<PossibleBet> PossibleBets { get; set; } = new List<PossibleBet>();
         #endregion
         
         public League(string name, string skyName, int numTeams)
@@ -74,14 +74,28 @@ namespace Insight.Models
         {
             AliasFetcher af = new AliasFetcher();
             OddsFetcher of = new OddsFetcher();
-            var links = of.LoadLinks(af.GetAlternativeLeagueName("Premier League"));
+            var links = of.LoadLinks(af.GetAlternativeLeagueName(LeagueName));
+            var threads = new List<Thread>();
 
             foreach(var link in links)
             {
-                of.GetBets(link); // thread this
+                var thr = new Thread(() => GetBets(link));
+                threads.Add(thr);
+                thr.Start();
+                //GetBets(link);
             }
+
+            while (threads.Any(thr => thr.IsAlive)) { }
             
         }
+
+        void GetBets(string link)
+        {
+            OddsFetcher of = new OddsFetcher();
+            var bets = of.GetBets(link); // thread this
+            PossibleBets.AddRange(bets);
+        }
+
 
         void LoadFixtures()
         {

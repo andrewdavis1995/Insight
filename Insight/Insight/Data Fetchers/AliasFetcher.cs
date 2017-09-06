@@ -13,7 +13,8 @@ namespace Insight.Data_Fetchers
             //spl
             switch (team)
             {
-                case "Hamilton Academical": return "Hamilton";
+                case "Hamilton Academical":
+                    return "Hamilton";
 
                 // prem
                 case "West Bromwich Albion":

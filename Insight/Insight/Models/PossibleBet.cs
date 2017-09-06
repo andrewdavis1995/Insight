@@ -15,10 +15,10 @@ namespace Insight.Models
         public int Validated { get; set; } = 0;
         public bool Won { get; set; } = false;
 
-        public string Type { get; set; }
+        public BetType Type { get; set; }
 
 
-        public PossibleBet(string homeTeam, string awayTeam, string date, string odds, string type)
+        public PossibleBet(string homeTeam, string awayTeam, string date, string odds, BetType type)
         {
             HomeTeam = homeTeam;
             AwayTeam = awayTeam;
@@ -37,4 +37,10 @@ namespace Insight.Models
         }
 
     }
+
+    public enum BetType
+    {
+        HomeWin, Draw, AwayWin, BTTS, Over1AndAHalf
+    }
+
 }

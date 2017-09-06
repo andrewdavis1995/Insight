@@ -79,8 +79,106 @@ namespace Insight.Data_Fetchers
             var split = date.Split('|');
             var fullDate = split[0].Trim() + " @ " + split[1].Trim();
 
+            list.AddRange(GetFullTimeResult(source, title, fullDate));  // outrights
+            list.AddRange(GetBTTS(source, title, fullDate));  // BTTS
+            list.AddRange(GetOver1(source, title, fullDate));  // 1.5+
+
             return list;
         }
+
+        public List<PossibleBet> GetFullTimeResult(string source, string fixture, string date)
+        {
+            List<PossibleBet> bets = new List<PossibleBet>();
+            try
+            {
+                // "Full Time Result"
+                var index = source.IndexOf("Full Time Result") + 16;
+                source = source.Substring(index);
+                index = source.IndexOf("\"odds\">") + 7;
+                source = source.Substring(index);
+                index = source.IndexOf("</");
+                var homeOdds = source.Substring(0, index);
+
+                source = source.Substring(index);
+                index = source.IndexOf("\"odds\">") + 7;
+                source = source.Substring(index);
+                index = source.IndexOf("</");
+                var drawOdds = source.Substring(0, index);
+
+                source = source.Substring(index);
+                index = source.IndexOf("\"odds\">") + 7;
+                source = source.Substring(index);
+                index = source.IndexOf("</");
+                var awayOdds = source.Substring(0, index);
+
+
+                var split = fixture.Split(new string[] { " v " }, StringSplitOptions.None);
+
+                bets.Add(new PossibleBet(split[0], split[1], date, homeOdds, BetType.HomeWin));
+                bets.Add(new PossibleBet(split[0], split[1], date, drawOdds, BetType.Draw));
+                bets.Add(new PossibleBet(split[0], split[1], date, awayOdds, BetType.AwayWin));
+            }
+            catch (Exception) { }
+
+            return bets;
+        }
+
+
+
+
+        public List<PossibleBet> GetBTTS(string source, string fixture, string date)
+        {
+            List<PossibleBet> bets = new List<PossibleBet>();
+            try
+            {
+                // "BTTS"
+                var index = source.IndexOf("Both Teams To Score") + 16;
+                source = source.Substring(index);
+                index = source.IndexOf("Both Teams To Score") + 16;
+                source = source.Substring(index);
+                index = source.IndexOf("\"odds\">") + 7;
+                source = source.Substring(index);
+                index = source.IndexOf("</");
+                var yesOdds = source.Substring(0, index);
+
+                var split = fixture.Split(new string[] { " v " }, StringSplitOptions.None);
+
+                bets.Add(new PossibleBet(split[0], split[1], date, yesOdds, BetType.BTTS));
+            }
+            catch (Exception) { }
+
+            return bets;
+        }
+
+
+
+        public List<PossibleBet> GetOver1(string source, string fixture, string date)
+        {
+            List<PossibleBet> bets = new List<PossibleBet>();
+            try
+            {
+                // "BTTS"
+                var index = source.IndexOf("Under/Over 1.5 Goals") + 16;
+                source = source.Substring(index);
+                index = source.IndexOf("Under/Over 1.5 Goals") + 16;
+                source = source.Substring(index);
+                index = source.IndexOf("\"odds\">") + 7;
+                source = source.Substring(index);
+                index = source.IndexOf("\"odds\">") + 7;
+                source = source.Substring(index);
+                index = source.IndexOf("</");
+                var yesOdds = source.Substring(0, index);
+
+                var split = fixture.Split(new string[] { " v " }, StringSplitOptions.None);
+
+                bets.Add(new PossibleBet(split[0], split[1], date, yesOdds, BetType.Over1AndAHalf));
+            }
+            catch (Exception) { }
+
+            return bets;
+        }
+
+
     }
 }
 
