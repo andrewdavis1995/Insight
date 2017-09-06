@@ -46,3 +46,6 @@ C:\Users\asuth\Documents\Visual Studio 2015\Projects\Insight\Insight\obj\Debug\V
 C:\Users\asuth\Documents\Visual Studio 2015\Projects\Insight\Insight\obj\Debug\Views\NoDataLabel.baml
 C:\Users\asuth\Documents\Visual Studio 2015\Projects\Insight\Insight\obj\Debug\Views\DateLabel.g.cs
 C:\Users\asuth\Documents\Visual Studio 2015\Projects\Insight\Insight\obj\Debug\Views\DateLabel.baml
+C:\Users\asuth\Documents\Insight\Insight\Insight\bin\Debug\Insight.exe.config
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.exe
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.pdb
