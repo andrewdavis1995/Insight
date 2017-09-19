@@ -34,7 +34,7 @@ namespace Insight.Data_Fetchers
         public List<TableItem> GetWorstDefence(List<Fixture> results)
         {
             var table = GetTable(results, TableType.FullTable);
-            var list = table.OrderBy(s => s.TableData[4]).ToList();
+            var list = table.OrderBy(s => s.TableData[5 ]).ToList();
             return list;
         }
 

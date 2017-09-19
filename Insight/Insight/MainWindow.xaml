@@ -32,11 +32,12 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <custom:MenuButton Grid.Column="1" Grid.Row="1" x:Name="cmdNewSetup"></custom:MenuButton>
+            <custom:MenuButton Grid.Column="1" Grid.Row="1" x:Name="cmdNewSetup" MouseDown="CreateSetup"></custom:MenuButton>
             <custom:MenuButton Grid.Column="2" Grid.Row="1" x:Name="cmdViewSetups"></custom:MenuButton>
             <custom:MenuButton Grid.Column="3" Grid.Row="1" x:Name="cmdStats"></custom:MenuButton>
             <custom:MenuButton Grid.Column="4" Grid.Row="1" x:Name="cmdCompetitions" MouseDown="ViewCompetitions"></custom:MenuButton>
-            <custom:MenuButton Grid.Column="1" Grid.Row="2" x:Name="cmdBets"></custom:MenuButton>
+            <custom:MenuButton Grid.Column="1" Grid.Row="2" x:Name="cmdCurrentBets" MouseDown="cmdCurrentBets_MouseDown"></custom:MenuButton>
+            <custom:MenuButton Grid.Column="2" Grid.Row="2" x:Name="cmdBets"></custom:MenuButton>
 
 
         </Grid>

@@ -1,4 +1,5 @@
-﻿using Insight.Data_Fetchers;
+﻿using Insight.Converters;
+using Insight.Data_Fetchers;
 using Insight.Holders;
 using Insight.Models;
 using Insight.UI_Fetcher;
@@ -36,6 +37,9 @@ namespace Insight.Views
 
         public LoadingScreen()
         {
+            DateConverter dc = new DateConverter();
+            var dt = dc.GetDateTimeFromString("Friday 8 September");
+           
             try
             {
                 _gifDecoder = new GifBitmapDecoder(new Uri("pack://application:,,,/Insight;component/Resources/coinGif.gif"), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
@@ -100,7 +104,7 @@ namespace Insight.Views
             LeagueHolder.LeagueList.Add("League Two", new League("League Two", "league-2", 24));
             LeagueHolder.LeagueList.Add("Scottish Premier League", new League("Scottish Premier League", "scottish-premier", 12));
             LeagueHolder.LeagueList.Add("Scottish Championship", new League("Scottish Championship", "scottish-championship", 10));
-            
+
             // start a thread for second box, and add to list
             foreach (var child in LeagueHolder.LeagueList)
             {

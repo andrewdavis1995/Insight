@@ -1,0 +1,91 @@
+﻿<Window x:Class="Insight.TipsterBotCreation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Insight"
+        xmlns:custom="clr-namespace:Insight.Views"
+        mc:Ignorable="d" 
+        Title="Insight" Height="799" Width="1200" ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None" Background="{DynamicResource PrimaryBrush}">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Background="{DynamicResource TertiaryBrush}"></Grid>
+        <Grid Background="#ffffff" Grid.Row="1">
+            <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="10,10,0,10" TextWrapping="Wrap" Text="TipsterBot Name" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="300"/>
+            <Button HorizontalAlignment="Right" Width="100" Margin="10" BorderThickness="0" FontFamily="Lato" Background="{DynamicResource TertiaryBrush}" Foreground="#ffffff" FontSize="14" Click="CmdSave_Click">Save</Button>
+        </Grid>
+
+        <Grid Grid.Row="2" Background="White" Margin="0, 0, 0, 7">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderThickness="0,0,0,4" Grid.Column="0" BorderBrush="{DynamicResource TertiaryBrush}" Margin="5, 0" Width="90" Name="cmdComponents" MouseDown="cmdComponents_MouseDown">
+                <Label HorizontalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="{DynamicResource TextBrush}" Content="Components" VerticalAlignment="Top" />
+            </Border>
+            <Border BorderThickness="0,0,0,0" Grid.Column="1" BorderBrush="{DynamicResource TertiaryBrush}" Margin="5, 0" Width="90" Name="cmdLeagues" MouseDown="cmdLeagues_MouseDown">
+                <Label HorizontalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="{DynamicResource TextBrush}" Content="Leagues" VerticalAlignment="Top" />
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="3">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Name="SelectedElements" Visibility="Visible">
+                <TextBlock Padding="10" Background="White" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="12">Included Components:</TextBlock>
+                <Grid Height="50" Background="#4320c3b3" MouseDown="ShowNewSetupOptions" Name="NewComponentButton">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Margin="10" FontWeight="Bold" FontSize="12" VerticalAlignment="Center">+</TextBlock>
+                    <TextBlock Padding="10" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="12" Grid.Column="1" VerticalAlignment="Center">Add Component</TextBlock>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Name="SelectedLeagues" Visibility="Hidden">
+                <CheckBox FontFamily="Lato" FontSize="12" Margin="10, 5" IsChecked="true" >Premier League</CheckBox>
+                <CheckBox FontFamily="Lato" FontSize="12" Margin="10, 5" IsChecked="true" >Championship</CheckBox>
+                <CheckBox FontFamily="Lato" FontSize="12" Margin="10, 5" IsChecked="true" >League One</CheckBox>
+                <CheckBox FontFamily="Lato" FontSize="12" Margin="10, 5" IsChecked="true" >League Two</CheckBox>
+                <CheckBox FontFamily="Lato" FontSize="12" Margin="10, 5" IsChecked="true" >Scottish Premier League</CheckBox>
+                <CheckBox FontFamily="Lato" FontSize="12" Margin="10, 5" IsChecked="true" >Scottish Championship</CheckBox>
+            </StackPanel>
+
+            <Grid Grid.Column="1" Background="#ffffff" Margin="1,0,0,0" Name="NewItemGrid" Visibility="Visible">
+                <StackPanel>
+                    <custom:BetTypeSelection x:Name="cmdOutright" Tag="0" MouseDown="BetTypeClicked"></custom:BetTypeSelection>
+                    <custom:BetTypeSelection x:Name="cmdBtts" Tag="1" MouseDown="BetTypeClicked"></custom:BetTypeSelection>
+                    <custom:BetTypeSelection x:Name="cmdOver1" Tag="2" MouseDown="BetTypeClicked"></custom:BetTypeSelection>
+                    <custom:BetTypeSelection x:Name="cmdPlayerToScore" Tag="3" MouseDown="BetTypeClicked"></custom:BetTypeSelection>
+                    <custom:BetTypeSelection x:Name="cmdHalfWithMostGoals" Tag="4" MouseDown="BetTypeClicked"></custom:BetTypeSelection>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Background="#ffffff" Margin="1,0,0,0" Name="ConfigurationGrid" Visibility="Hidden">
+                <StackPanel Name="StckConfig">
+                    
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+
+        
+    </Grid>
+</Window>

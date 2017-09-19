@@ -14,6 +14,10 @@ namespace Insight.Models
         public string Odds { get; set; } = "1/1";
         public int Validated { get; set; } = 0;
         public bool Won { get; set; } = false;
+        public string Player { get; set; }
+        public bool HomePlayer { get; set; }
+
+        public float Confidence { get; set; }
 
         public BetType Type { get; set; }
 
@@ -25,6 +29,16 @@ namespace Insight.Models
             When = date;
             Odds = odds;
             Type = type;
+        }
+        public PossibleBet(string homeTeam, string awayTeam, string date, string odds, string player, BetType type, bool home)
+        {
+            HomeTeam = homeTeam;
+            AwayTeam = awayTeam;
+            When = date;
+            Odds = odds;
+            Type = type;
+            Player = player;
+            HomePlayer = home;
         }
 
         public double GetOddsDouble()
@@ -40,7 +54,7 @@ namespace Insight.Models
 
     public enum BetType
     {
-        HomeWin, Draw, AwayWin, BTTS, Over1AndAHalf
+        HomeWin, Draw, AwayWin, BTTS, Over1AndAHalf, FirstHalfMostGoals, SecondHalfMostGoals, ToScoreIn90
     }
 
 }

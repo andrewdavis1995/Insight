@@ -29,7 +29,7 @@
         <TextBlock Name="lblDraws" Grid.Column="5" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">D</TextBlock>
         <TextBlock Name="lblLosses" Grid.Column="6" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">L</TextBlock>
         <TextBlock Name="lblGf" Grid.Column="7" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">GF</TextBlock>
-        <TextBlock Name="lblGa" Grid.Column="8" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">GS</TextBlock>
+        <TextBlock Name="lblGa" Grid.Column="8" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">GA</TextBlock>
         <TextBlock Name="lblGd" Grid.Column="9" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">GD</TextBlock>
         <TextBlock Name="lblPoints" Grid.Column="10" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">PT</TextBlock>
         

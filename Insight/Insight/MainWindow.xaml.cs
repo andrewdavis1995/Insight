@@ -5,6 +5,7 @@ using Insight.UI_Fetcher;
 using Insight.Views;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -27,15 +28,37 @@ namespace Insight
     public partial class MainWindow : Window
     {
         int leagueIndex = 0;
+        public static List<TipsterSetup> BotConfigs = new List<TipsterSetup>();
+        List<PossibleBet> selections = new List<PossibleBet>();
 
         public MainWindow()
         {
             InitializeComponent();
             InitialiseButtons();
             DisplayTable();
+            LoadTipsters();
+            try
+            {
+                AnalyseMatches();
+            }catch(Exception e)
+            {
+                var i = 0;
+            }
+        }
 
-            var oddsads = LeagueHolder.LeagueList["Premier League"];
-            var sdfds = 0;
+        private void LoadTipsters()
+        {
+            var dirs = Directory.GetDirectories(Directory.GetCurrentDirectory() + "/Configs/");
+
+            foreach (var dir in dirs)
+            {
+                var split = dir.Split('/');
+                var dirName = split[split.Length - 1];
+
+                var setup = new TipsterSetup();
+                setup.Load(dirName);
+                BotConfigs.Add(setup);
+            }
         }
 
         private void InitialiseButtons()
@@ -44,7 +67,8 @@ namespace Insight
             cmdViewSetups.txtTitle.Text = "View Setups";
             cmdCompetitions.txtTitle.Text = "Competitions";
             cmdStats.txtTitle.Text = "Bet Statistics";
-            cmdBets.txtTitle.Text = "Bet History";
+            cmdCurrentBets.txtTitle.Text = "Current Tips";
+            cmdBets.txtTitle.Text = "Tip History";
         } 
                
         void DisplayTable()
@@ -97,6 +121,64 @@ namespace Insight
         {
             LeagueSelection ls = new LeagueSelection();
             ls.Show();
+            this.Hide();
+        }
+
+        private void CreateSetup(object sender, MouseButtonEventArgs e)
+        {
+            var tipsterBotCreation = new TipsterBotCreation();
+            tipsterBotCreation.Owner = this;
+            tipsterBotCreation.Show();
+            this.Hide();
+        }
+
+
+        void AnalyseMatches()
+        {
+            var suggestionFetcher = new SuggestionFetcher();
+
+            foreach(var setup in BotConfigs)
+            {
+                selections.AddRange(suggestionFetcher.GetBets(setup));
+            }
+
+            SaveSetups(selections);
+        }
+
+        private void SaveSetups(List<PossibleBet> selections)
+        {
+                    Directory.CreateDirectory(Environment.CurrentDirectory + "\\Tips");
+                    foreach(var file in Directory.GetFiles(Environment.CurrentDirectory + "\\Tips"))
+                    {
+                        File.Delete(file);
+                    }
+            foreach (var bet in selections)
+            {
+                    var date = bet.When.Replace(':', '£');
+                try
+                {
+                    var filePath = Environment.CurrentDirectory + "\\Tips\\" + date + ".txt";
+                                        
+                    var sw = new StreamWriter(filePath, true);
+
+                    sw.WriteLine(string.Format("{0}@{1}@{2}@{3}@{4}@{5}@{6}", bet.Type, bet.When, bet.HomeTeam, bet.AwayTeam, bet.Player, bet.Odds, bet.Confidence));
+
+                    sw.Close();
+                }catch(Exception e)
+                {
+                    var vv = 0;
+                }
+            }
+        }
+
+        private void cmdCurrentBets_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            selections.Clear();
+            AnalyseMatches();
+
+            var page = new CurrentTipsPage(selections);
+            page.Show();
+            page.Owner = this;
             this.Hide();
         }
     }

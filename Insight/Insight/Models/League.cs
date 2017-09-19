@@ -32,6 +32,8 @@ namespace Insight.Models
         
         public League(string name, string skyName, int numTeams)
         {
+            PossibleBets.Capacity = 2000;
+
             LeagueName = name;
             NumTeams = numTeams;
             SkySportsName = skyName;
@@ -41,7 +43,6 @@ namespace Insight.Models
         {
             // give a chance for screen to show
             Thread.Sleep(200);
-
 
             // store list of all threads
             List<Thread> thrPool = new List<Thread>();
@@ -110,7 +111,22 @@ namespace Insight.Models
             Results = resultsFetcher.GetResults(SkySportsName);
             
             Table = new StatFetcher().GetTable(this.Results, TableType.FullTable);
+        }
 
+        public List<PossibleBet> FindBets(Fixture fixture)
+        {
+            var bets = new List<PossibleBet>();
+            foreach(var bet in PossibleBets)
+            {
+                if (bet != null)
+                {
+                    if (bet.HomeTeam == fixture.HomeTeam && bet.AwayTeam == fixture.AwayTeam)
+                    {
+                        bets.Add(bet);
+                    }
+                }
+            }
+            return bets;
         }
         
     }

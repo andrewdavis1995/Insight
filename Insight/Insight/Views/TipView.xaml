@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Insight.Views.TipView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Insight.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="250" Background="{DynamicResource TertiaryBrush}" Margin="8, 10">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="lblBetType" Text="Bet Type" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="Lato" FontSize="22" Margin="5"/>
+        <TextBlock x:Name="lblPlayer" Text="Player" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="Lato" FontSize="12" Margin="5" Grid.Row="1"/>
+        <TextBlock x:Name="lblFixture" Text="Bet Type" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="Lato" FontSize="12" Margin="5" Grid.Row="2"/>
+        <TextBlock x:Name="lblDate" Text="Date" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="Lato" FontSize="12" Margin="5" Grid.Row="3"/>
+        <TextBlock x:Name="lblOdds" Text="11/2" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="Lato" FontSize="30" Margin="5" Grid.Row="4"/>
+
+        <Grid Grid.Row="5" Height="20" Background="#232323" Margin="0, 10">
+            <Label Name="lblProgress" HorizontalAlignment="Left" Width="20" Background="White" Margin="0"></Label>
+        </Grid>
+        
+    </Grid>
+</UserControl>

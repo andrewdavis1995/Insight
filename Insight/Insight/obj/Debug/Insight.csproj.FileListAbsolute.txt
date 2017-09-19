@@ -94,3 +94,17 @@ C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.csproj.Genera
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.exe
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.pdb
 C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Insight.csprojResolveAssemblyReference.cache
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\TipsterBotCreation.g.cs
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\TipsterBotCreation.baml
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\BetTypeSelection.g.cs
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\BetTypeSelection.baml
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\SliderBar.g.cs
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\SliderBarWithToggle.g.cs
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\SliderBar.baml
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\SliderBarWithToggle.baml
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\ConfigCheckbox.g.cs
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\ConfigCheckbox.baml
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\TipView.g.cs
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\Views\TipView.baml
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\CurrentTipsPage.g.cs
+C:\Users\asuth\Documents\Insight\Insight\Insight\obj\Debug\CurrentTipsPage.baml

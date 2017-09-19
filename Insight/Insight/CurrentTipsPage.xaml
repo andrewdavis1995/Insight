@@ -1,0 +1,47 @@
+﻿<Window x:Class="Insight.CurrentTipsPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Insight"
+        xmlns:views="clr-namespace:Insight.Views"
+        mc:Ignorable="d"
+        Title="Insight" Height="799" Width="1200" ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None" Background="{DynamicResource PrimaryBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="White">
+            <StackPanel>
+                <Button x:Name="cmdBack" Content="Back" Height="30" Click="cmdBack_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Margin="240,0,10,0.2">
+            <Grid Name="TipsGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

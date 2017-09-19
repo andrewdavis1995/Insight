@@ -82,6 +82,8 @@ namespace Insight.Data_Fetchers
             list.AddRange(GetFullTimeResult(source, title, fullDate));  // outrights
             list.AddRange(GetBTTS(source, title, fullDate));  // BTTS
             list.AddRange(GetOver1(source, title, fullDate));  // 1.5+
+            list.AddRange(GetHalfWithMostGoals(source, title, fullDate));  // HWMG
+            list.AddRange(GetScorers(source, title, fullDate));  // TSI90
 
             return list;
         }
@@ -114,9 +116,13 @@ namespace Insight.Data_Fetchers
 
                 var split = fixture.Split(new string[] { " v " }, StringSplitOptions.None);
 
-                bets.Add(new PossibleBet(split[0], split[1], date, homeOdds, BetType.HomeWin));
-                bets.Add(new PossibleBet(split[0], split[1], date, drawOdds, BetType.Draw));
-                bets.Add(new PossibleBet(split[0], split[1], date, awayOdds, BetType.AwayWin));
+                var aliasFetcher = new AliasFetcher();
+                var home = aliasFetcher.SkybetNameToFixtureName(split[0]);
+                var away = aliasFetcher.SkybetNameToFixtureName(split[1]);
+
+                bets.Add(new PossibleBet(home, away, date, homeOdds, BetType.HomeWin));
+                bets.Add(new PossibleBet(home, away, date, drawOdds, BetType.Draw));
+                bets.Add(new PossibleBet(home, away, date, awayOdds, BetType.AwayWin));
             }
             catch (Exception) { }
 
@@ -142,8 +148,11 @@ namespace Insight.Data_Fetchers
                 var yesOdds = source.Substring(0, index);
 
                 var split = fixture.Split(new string[] { " v " }, StringSplitOptions.None);
+                var aliasFetcher = new AliasFetcher();
+                var home = aliasFetcher.SkybetNameToFixtureName(split[0]);
+                var away = aliasFetcher.SkybetNameToFixtureName(split[1]);
 
-                bets.Add(new PossibleBet(split[0], split[1], date, yesOdds, BetType.BTTS));
+                bets.Add(new PossibleBet(home, away, date, yesOdds, BetType.BTTS));
             }
             catch (Exception) { }
 
@@ -170,14 +179,117 @@ namespace Insight.Data_Fetchers
                 var yesOdds = source.Substring(0, index);
 
                 var split = fixture.Split(new string[] { " v " }, StringSplitOptions.None);
+                var aliasFetcher = new AliasFetcher();
+                var home = aliasFetcher.SkybetNameToFixtureName(split[0]);
+                var away = aliasFetcher.SkybetNameToFixtureName(split[1]);
 
-                bets.Add(new PossibleBet(split[0], split[1], date, yesOdds, BetType.Over1AndAHalf));
+                bets.Add(new PossibleBet(home, away, date, yesOdds, BetType.Over1AndAHalf));
             }
             catch (Exception) { }
 
             return bets;
         }
 
+        public List<PossibleBet> GetHalfWithMostGoals(string source, string fixture, string date)
+        {
+            List<PossibleBet> bets = new List<PossibleBet>();
+            try
+            {
+                // "BTTS"
+                var index = source.IndexOf("Half with Most Goals") + 16;
+                source = source.Substring(index);
+                index = source.IndexOf("\"odds\">") + 7;
+                source = source.Substring(index);
+                index = source.IndexOf("</");
+                var firstOdds = source.Substring(0, index);
+
+                index = source.IndexOf("\"odds\">") + 7;
+                source = source.Substring(index);
+                index = source.IndexOf("</");
+                var secondOdds = source.Substring(0, index);
+
+                var split = fixture.Split(new string[] { " v " }, StringSplitOptions.None);
+
+                var aliasFetcher = new AliasFetcher();
+                var home = aliasFetcher.SkybetNameToFixtureName(split[0]);
+                var away = aliasFetcher.SkybetNameToFixtureName(split[1]);
+                bets.Add(new PossibleBet(home, away, date, firstOdds, BetType.FirstHalfMostGoals));
+                bets.Add(new PossibleBet(home, away, date, secondOdds, BetType.SecondHalfMostGoals));
+            }
+            catch (Exception) { }
+
+            return bets;
+        }
+
+        public List<PossibleBet> GetScorers(string source, string fixture, string date)
+        {
+            List<PossibleBet> bets = new List<PossibleBet>();
+            try
+            {
+                var split = fixture.Split(new string[] { " v " }, StringSplitOptions.None);
+                
+                var index = source.IndexOf("To Score a Brace") + 16;
+                source = source.Substring(index);
+                index = source.IndexOf("<th scope=\"row\">");
+                source = source.Substring(index);
+                var endIndex = source.IndexOf("No Goalscorer");
+
+                //index = source.IndexOf("<span>");
+
+                bool home = true;
+
+                while (index > -1 && index < endIndex)
+                {
+                    index = 16;
+                    source = source.Substring(index);
+
+                    var tempIndex = source.IndexOf("<span>");
+                    if(tempIndex < 50)
+                    {
+                        source = source.Substring(tempIndex + 6);
+                    }
+
+                    index = source.IndexOf("<");
+                    var player = source.Substring(0, index).Trim();
+                    source = source.Substring(index);
+                    index = source.IndexOf("\"odds\">") + 7;
+                    source = source.Substring(index);
+                    index = source.IndexOf("\"odds\">") + 7;
+                    source = source.Substring(index);
+                    index = source.IndexOf("\"odds\">") + 7;
+                    source = source.Substring(index);
+                    index = source.IndexOf("</");
+                    var playerOdds = source.Substring(0, index);
+
+
+                    var aliasFetcher = new AliasFetcher();
+                    var homeT = aliasFetcher.SkybetNameToFixtureName(split[0]);
+                    var awayT = aliasFetcher.SkybetNameToFixtureName(split[1]);
+
+                    if (!player.Contains('/'))
+                    {
+                        bets.Add(new PossibleBet(homeT, awayT, date, playerOdds, player, BetType.ToScoreIn90, home));
+                    }
+                    else
+                    {
+                        home = false;
+                    }
+                    index = source.IndexOf("<th scope=\"row\">");
+                    source = source.Substring(index);
+                    endIndex = source.IndexOf("No Goalscorer");
+
+                }
+
+                var stop = 0;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return bets;
+        }
 
     }
 }

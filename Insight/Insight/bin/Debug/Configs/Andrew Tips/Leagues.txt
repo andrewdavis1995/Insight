@@ -1,0 +1,6 @@
+Premier League@True
+Championship@True
+League One@True
+League Two@True
+Scottish Premier League@True
+Scottish Championship@True

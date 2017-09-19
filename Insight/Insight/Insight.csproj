@@ -70,10 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\DateConverter.cs" />
     <Compile Include="Data Fetchers\AliasFetcher.cs" />
     <Compile Include="Data Fetchers\OddsFetcher.cs" />
     <Compile Include="Data Fetchers\ResultsFetcher.cs" />
     <Compile Include="Data Fetchers\StatFetcher.cs" />
+    <Compile Include="Data Fetchers\SuggestionFetcher.cs" />
     <Compile Include="Holders\LeagueHolder.cs" />
     <Compile Include="LeagueSelection.xaml.cs">
       <DependentUpon>LeagueSelection.xaml</DependentUpon>
@@ -83,6 +85,9 @@
     </Compile>
     <Compile Include="Models\Accumulator.cs" />
     <Compile Include="Models\Bet.cs" />
+    <Compile Include="CurrentTipsPage.xaml.cs">
+      <DependentUpon>CurrentTipsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\League.cs" />
     <Compile Include="Models\PossibleBet.cs" />
@@ -90,14 +95,24 @@
     <Compile Include="Models\ScorerBet.cs" />
     <Compile Include="Models\Stat.cs" />
     <Compile Include="Models\TeamResult.cs" />
+    <Compile Include="Models\TipsterSetup.cs" />
     <Compile Include="Models\TopScorer.cs" />
     <Compile Include="TableViewHeader.xaml.cs">
       <DependentUpon>TableViewHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipsterBotCreation.xaml.cs">
+      <DependentUpon>TipsterBotCreation.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI Fetcher\BadgeFetcher.cs" />
     <Compile Include="UI Fetcher\IconFetcher.cs" />
     <Compile Include="Views\BarChartItem.xaml.cs">
       <DependentUpon>BarChartItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BetTypeSelection.xaml.cs">
+      <DependentUpon>BetTypeSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigCheckbox.xaml.cs">
+      <DependentUpon>ConfigCheckbox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DateLabel.xaml.cs">
       <DependentUpon>DateLabel.xaml</DependentUpon>
@@ -110,6 +125,12 @@
     </Compile>
     <Compile Include="Views\NoDataLabel.xaml.cs">
       <DependentUpon>NoDataLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SliderBar.xaml.cs">
+      <DependentUpon>SliderBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SliderBarWithToggle.xaml.cs">
+      <DependentUpon>SliderBarWithToggle.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TeamFixtureView.xaml.cs">
       <DependentUpon>TeamFixtureView.xaml</DependentUpon>
@@ -135,6 +156,9 @@
     <Compile Include="Views\TeamView.xaml.cs">
       <DependentUpon>TeamView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TipView.xaml.cs">
+      <DependentUpon>TipView.xaml</DependentUpon>
+    </Compile>
     <Page Include="LeagueSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,11 +181,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="CurrentTipsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TableViewHeader.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TipsterBotCreation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\BarChartItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BetTypeSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfigCheckbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -178,6 +218,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\NoDataLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SliderBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SliderBarWithToggle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,6 +258,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TeamView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TipView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -273,6 +325,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\coinGif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\over1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

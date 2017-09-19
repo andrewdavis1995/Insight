@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Insight.Views.SliderBarWithToggle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Insight"
+             xmlns:views="clr-namespace:Insight.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300" >
+
+
+    <Border BorderThickness="0, 0, 0, 2" Padding="20, 10"  BorderBrush="#44000000">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <views:SliderBar Margin="0, 20, 0, 0" Grid.Row="1" x:Name="TheSlider" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+
+            <Grid Grid.Row="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <RadioButton Margin="10, 3" Name="rdBtn1" FontFamily="Lato" IsChecked="True" GroupName="SelectionGroup" Checked="rdBtn1_Checked">Do a thing</RadioButton>
+                <RadioButton Grid.Row="1" Margin="10, 3" Name="rdBtn2" FontFamily="Lato" GroupName="SelectionGroup" Checked="rdBtn2_Checked">Do a different thing</RadioButton>
+            </Grid>
+
+
+        </Grid>
+
+
+    </Border>
+
+</UserControl>

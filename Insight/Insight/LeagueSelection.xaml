@@ -25,7 +25,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Grid MouseDown="LeagueClicked" Tag="Premiership" Grid.Row="1" Grid.Column="1" Background="#ffffff" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10">
+        <Grid MouseDown="LeagueClicked" Tag="Premier League" Grid.Row="1" Grid.Column="1" Background="#ffffff" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10">
             <StackPanel>
                 <TextBlock x:Name="TitlePremiership" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Premier League" Foreground="#0f0f0f" VerticalAlignment="Top"/>
                 <TextBlock x:Name="TeamsPremiership" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="20 teams" Foreground="#121212" VerticalAlignment="Top"/>

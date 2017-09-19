@@ -11,19 +11,14 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height=".8*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="30"/>
-            <ColumnDefinition Width="30"/>
-            <ColumnDefinition Width="30"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        
-        <TextBlock x:Name="lblHeading" Text="Loading" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="1" Foreground="White" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="32" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="lblHeading" Text="Loading" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="2" Foreground="White" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="26" HorizontalAlignment="Center"/>
 
     </Grid>
 </Window>
