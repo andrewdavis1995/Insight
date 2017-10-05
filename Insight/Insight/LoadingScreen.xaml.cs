@@ -39,7 +39,7 @@ namespace Insight.Views
         {
             DateConverter dc = new DateConverter();
             var dt = dc.GetDateTimeFromString("Friday 8 September");
-           
+
             try
             {
                 _gifDecoder = new GifBitmapDecoder(new Uri("pack://application:,,,/Insight;component/Resources/coinGif.gif"), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
@@ -139,6 +139,16 @@ namespace Insight.Views
         {
             new MainWindow().Show();
             this.Hide();
+        }
+
+        private void imgIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            System.Windows.Media.Imaging.BitmapImage logo = new BitmapImage();
+            logo.BeginInit();
+            logo.UriSource = new Uri(@"/Insight;component/Resources/longshot.png", UriKind.Relative);
+            logo.EndInit();
+
+            imgIcon.Source = logo;
         }
     }
 }

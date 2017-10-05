@@ -37,8 +37,8 @@ namespace Insight.Data_Fetchers
 
                 //var split = title.Split(new string[] { " v " }, StringSplitOptions.None);
 
-                //var homeTeam = split[0]; // run through alias calculator
-                //var awayTeam = split[1]; // run through alias calculator
+                //var homeTeam = split[0]; // run through alias calcuAbelr
+                //var awayTeam = split[1]; // run through alias calcuAbelr
 
                 list.Add(link);
 
@@ -55,6 +55,8 @@ namespace Insight.Data_Fetchers
         public List<PossibleBet> GetBets(string link)
         {
             var source = new WebSourceFetcher().GetPageSource("http://skybet.com" + link);
+
+            if (source == "") return new List<PossibleBet>();
 
             var list = new List<PossibleBet>();
 

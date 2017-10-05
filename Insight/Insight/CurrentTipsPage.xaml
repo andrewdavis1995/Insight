@@ -20,13 +20,16 @@
             </StackPanel>
         </Grid>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Margin="240,0,10,0.2">
-            <Grid Name="TipsGrid">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="2" >
+            <Grid Name="TipsGrid" Height="Auto">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
 
@@ -43,5 +46,15 @@
 
             </Grid>
         </ScrollViewer>
+        
+    <Grid Background="#c6000000" Grid.ColumnSpan="2" Name="FixturePopup" Visibility="Hidden">
+            <Grid Margin="80" Background="{DynamicResource PrimaryBrush}">
+                <Label Content="Label" HorizontalAlignment="Left" Name="lblFixture" VerticalAlignment="Top"/>
+                <Button x:Name="cmdClosePopup" Content="Close" Height="30" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Click="cmdClose_Click"/>
+            </Grid>
     </Grid>
+        
+    </Grid>
+
+    
 </Window>

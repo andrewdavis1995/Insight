@@ -22,16 +22,16 @@
         </Grid.ColumnDefinitions>
 
         <Image Margin="5" Name="imgBadge" Grid.Column="1"></Image>
-        <TextBlock Name="lblTeam" Grid.Column="2" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="8, 0, 0, 0" FontFamily="pack://application:,,,/Fonts/#Lato">Team</TextBlock>
-        <TextBlock Name="lblPosition" Grid.Column="0" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="8, 0, 4, 0" FontFamily="pack://application:,,,/Fonts/#Lato" HorizontalAlignment="Center">Pos.</TextBlock>
-        <TextBlock Name="lblGames" Grid.Column="3" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">P</TextBlock>
-        <TextBlock Name="lblWins" Grid.Column="4" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">W</TextBlock>
-        <TextBlock Name="lblDraws" Grid.Column="5" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">D</TextBlock>
-        <TextBlock Name="lblLosses" Grid.Column="6" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">L</TextBlock>
-        <TextBlock Name="lblGf" Grid.Column="7" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">GF</TextBlock>
-        <TextBlock Name="lblGa" Grid.Column="8" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">GA</TextBlock>
-        <TextBlock Name="lblGd" Grid.Column="9" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">GD</TextBlock>
-        <TextBlock Name="lblPoints" Grid.Column="10" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">PT</TextBlock>
+        <TextBlock Name="lblTeam" Grid.Column="2" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="8, 0, 0, 0" FontFamily="pack://application:,,,/Fonts/#Abel">Team</TextBlock>
+        <TextBlock Name="lblPosition" Grid.Column="0" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="8, 0, 4, 0" FontFamily="pack://application:,,,/Fonts/#Abel" HorizontalAlignment="Center">Pos.</TextBlock>
+        <TextBlock Name="lblGames" Grid.Column="3" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">P</TextBlock>
+        <TextBlock Name="lblWins" Grid.Column="4" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">W</TextBlock>
+        <TextBlock Name="lblDraws" Grid.Column="5" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">D</TextBlock>
+        <TextBlock Name="lblLosses" Grid.Column="6" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">L</TextBlock>
+        <TextBlock Name="lblGf" Grid.Column="7" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">GF</TextBlock>
+        <TextBlock Name="lblGa" Grid.Column="8" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">GA</TextBlock>
+        <TextBlock Name="lblGd" Grid.Column="9" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">GD</TextBlock>
+        <TextBlock Name="lblPoints" Grid.Column="10" Foreground="#252525" FontSize="10" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">PT</TextBlock>
         
     </Grid>
 </UserControl>

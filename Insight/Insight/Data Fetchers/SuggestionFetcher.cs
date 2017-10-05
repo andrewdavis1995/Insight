@@ -1,4 +1,5 @@
-﻿using Insight.Holders;
+﻿using Insight.Converters;
+using Insight.Holders;
 using Insight.Models;
 using Insight.Views;
 using System;
@@ -11,7 +12,7 @@ namespace Insight.Data_Fetchers
 {
     public class SuggestionFetcher
     {
-        public List<PossibleBet> GetBets(TipsterSetup setup)
+        public List<Selection> GetBets(TipsterSetup setup)
         {
             var selections = new List<PossibleBet>();
 
@@ -20,7 +21,7 @@ namespace Insight.Data_Fetchers
                 if (league.Value)
                 {
                     var currentLeague = LeagueHolder.LeagueList[league.Key];
-                    var fixturesToFetch = currentLeague.NumTeams;
+                    var fixturesToFetch = currentLeague.NumTeams/2;
 
                     var fixtures = currentLeague.Fixtures.Take(fixturesToFetch);
 
@@ -30,12 +31,16 @@ namespace Insight.Data_Fetchers
 
                         foreach (var bet in bets)
                         {
-                            //for (int i = 0; i < setup.Configs.Count; i++)
-                            //{
-                            // TEMP
-                            //if (setup.Ids[i] == 0)
-                            //{
-                            //continue;
+                            if (bet.Type == BetType.BTTS)
+                            {
+                                var valid = CheckBtts(currentLeague, bet);
+                                if (valid.Confidence > 60) { selections.Add(valid); }
+                            }
+                            if (bet.Type == BetType.Over1AndAHalf)
+                            {
+                                var valid = CheckOver1(currentLeague, bet);
+                                if (valid.Confidence > 70) { selections.Add(valid); }
+                            }
 
                             if (bet.Type == BetType.ToScoreIn90)
                             {
@@ -56,20 +61,19 @@ namespace Insight.Data_Fetchers
                                     {
                                         foreach (var selection in valid)
                                         {
-                                            if (selection.Confidence > 100/1.5)
+                                            if (selection.Confidence > 80)
                                             {
                                                 selections.Add(selection);
                                             }
                                         }
                                     }
-
                                 }
                             }
 
-                            if (bet.Type == BetType.HomeWin || bet.Type == BetType.AwayWin)
+                            if (bet.Type == BetType.HomeWin || bet.Type == BetType.AwayWin || bet.Type == BetType.Draw)
                             {
 
-                                var valid = ValidateFixture(fixture, setup, bet.Type, currentLeague);
+                                var valid = ValidateFixture(fixture, setup, bet.Type, currentLeague, bet);
 
                                 if (valid != null)
                                 {
@@ -83,11 +87,234 @@ namespace Insight.Data_Fetchers
                 }
             }
 
-            return selections;
+            var sorted = MixAndMatch(selections);
+            
+            return sorted;
             //return selections.Where(s => s.Confidence > 50).ToList();
         }
 
-        List<PossibleBet> ValidateFixture(Fixture fixture, TipsterSetup bot, BetType bet, League league)
+
+        private string ClassifyItem(PossibleBet item)
+        {
+            if (item.Confidence >= 65 && item.GetOddsDouble() >= 9d / 10) { return "Value"; }
+            if (item.Confidence >= 45 && item.GetOddsDouble() >= 1.2d / 1) { return "Long Shot"; }
+            if (item.Confidence > 55 && item.GetOddsDouble() >= 7d / 10) { return "Double"; }
+            if (item.Confidence >= 70) { return "Acca"; }
+
+            return "Ignore";
+        }
+
+        public List<Selection> MixAndMatch(List<PossibleBet> list)
+        {
+            var query = list.GroupBy(x => x.When);
+
+            var selections = new List<Selection>();
+
+            foreach (var q in query)
+            {
+                var lister = q.ToList();
+                var outrights = lister.Where(x => x.Type == BetType.HomeWin || x.Type == BetType.AwayWin).ToList();
+                var scorers = lister.Where(x => x.Type == BetType.ToScoreIn90).ToList();
+                var theDouble = new List<PossibleBet>();
+                var theAcca = new List<PossibleBet>();
+
+                foreach(var scorer in scorers)
+                {
+                    selections.Add(new Selection(scorer.Player + " to score", q.Key, scorer));
+                }
+
+                foreach (var item in outrights)
+                {
+                    var classification = ClassifyItem(item);
+
+                    // to do - add field to acca class - set type
+                    if (classification == "Value") { selections.Add(new Selection("Value", q.Key, item)); }
+                    if (classification == "Long Shot") { selections.Add(new Selection("Long Shot", q.Key, item)); }
+                    if (classification == "Acca") { theAcca.Add(item); }
+                    if (classification == "Double") { theDouble.Add(item); }
+
+                    if (theDouble.Count >= 2 && new Selection("temp", "", theDouble).GetOverallOdds() > 1.5 && theDouble.Count < 4)
+                    {
+                        var copy = new List<PossibleBet>();
+                        copy.AddRange(theDouble);
+                        selections.Add(new Selection("Double", q.Key, copy));
+                        theDouble.Clear();
+                    }
+
+                }
+
+                if (theDouble.Count > 0)
+                {
+                    if (theDouble.Count == 1)
+                    {
+                        var selection = new Selection("Single", q.Key, theDouble);
+                        if (selection.GetOverallOdds() > 1.75d)
+                        {
+                            selections.Add(selection);
+                        }
+                    }
+                    else
+                    {
+                        selections.Add(new Selection("Double", q.Key, theDouble));
+                    }
+                }
+                if (theAcca.Count > 0)
+                {
+                    if (theAcca.Count == 1)
+                    {
+                        var selection = new Selection("Outright", q.Key, theAcca);
+                        var odds = selection.GetOverallOdds();
+                        if (odds >= 0.5d)
+                        {
+                            selections.Add(selection);
+                        }
+                    }
+                    else if (theAcca.Count == 2)
+                    {
+                        var selection = new Selection("Double", q.Key, theAcca);
+                        var odds = selection.GetOverallOdds();
+                        if (odds >= 0.8d)
+                        {
+                            selections.Add(selection);
+                        }
+                    }
+                    else
+                    {
+                        selections.Add(new Selection("Accumulator", q.Key, theAcca));
+                    }
+                }
+
+                // sort into categories
+
+                var over = lister.Where(x => x.Type == BetType.Over1AndAHalf).ToList();
+                var btts = lister.Where(x => x.Type == BetType.BTTS).ToList();
+
+
+                if (over.Count() + btts.Count() < 4)
+                {
+                    over.AddRange(btts);
+                    btts.Clear();
+                }
+
+                if (over.Count > 0) { selections.Add(new Selection("Goals Acca", q.Key, over)); }
+                if (btts.Count > 0) { selections.Add(new Selection("BTTS Acca", q.Key, btts)); }
+
+                var stop = 0;
+
+            }
+
+            return selections;
+
+        }
+
+
+
+
+        PossibleBet CheckBtts(League league, PossibleBet bet)
+        {
+            var homeTeam = bet.HomeTeam;
+            var awayTeam = bet.AwayTeam;
+
+            var someResults = league.Results.Take(3 * league.NumTeams);
+
+            var allResults = someResults.Where(res => res.HomeTeam == homeTeam || res.AwayTeam == homeTeam).ToList();
+            allResults.AddRange(someResults.Where(res => res.HomeTeam == awayTeam || res.AwayTeam == awayTeam));
+
+            var successCount = 0;
+            var gameCount = 0;
+
+            foreach (var v in allResults)
+            {
+                gameCount++;
+                if (v.HomeScore > 0 && v.AwayScore > 0) { successCount++; }
+            }
+
+            var perc = (float)successCount / gameCount;
+
+
+            // league pos
+            var homePos = 0;
+            var awayPos = 0;
+
+            for (int i = 0; i < league.Table.Count; i++)
+            {
+                if (league.Table[i].Team == bet.HomeTeam)
+                {
+                    homePos = i;
+                }
+                if (league.Table[i].Team == bet.AwayTeam)
+                {
+                    awayPos = i;
+                }
+            }
+
+            var tableDiff = Math.Abs(homePos - awayPos);
+            var tableFactor = ((float)tableDiff) / ((float)league.NumTeams * 2.5f);
+
+            var TABLE_WEIGHT = 30;
+            var OVER_GOALS_WEIGHT = 70;
+
+            var confidence = (OVER_GOALS_WEIGHT * perc)
+                           + (TABLE_WEIGHT * tableFactor);
+
+            bet.Confidence = confidence;
+            return bet;
+            
+        }
+
+        PossibleBet CheckOver1(League league, PossibleBet bet)
+        {
+            var homeTeam = bet.HomeTeam;
+            var awayTeam = bet.AwayTeam;
+
+            var someResults = league.Results.Take(3 * league.NumTeams);
+
+            var allResults = someResults.Where(res => res.HomeTeam == homeTeam || res.AwayTeam == homeTeam).ToList();
+            allResults.AddRange(someResults.Where(res => res.HomeTeam == awayTeam || res.AwayTeam == awayTeam));
+
+            var successCount = 0;
+            var gameCount = 0;
+
+            foreach (var v in allResults)
+            {
+                gameCount++;
+                if (v.HomeScore + v.AwayScore > 1) { successCount++; }
+            }
+
+            var perc = (float)successCount / gameCount;
+
+            // league pos
+            var homePos = 0;
+            var awayPos = 0;
+
+            for (int i = 0; i < league.Table.Count; i++)
+            {
+                if (league.Table[i].Team == bet.HomeTeam)
+                {
+                    homePos = i;
+                }
+                if (league.Table[i].Team == bet.AwayTeam)
+                {
+                    awayPos = i;
+                }
+            }
+
+            var tableDiff = Math.Abs(homePos - awayPos);
+            var tableFactor = ((float)tableDiff) / ((float)league.NumTeams * 2.5f);
+            
+            var TABLE_WEIGHT = 20;
+            var OVER_GOALS_WEIGHT = 80;
+
+            var confidence = (OVER_GOALS_WEIGHT * perc)
+                           + (TABLE_WEIGHT * tableFactor);
+
+            bet.Confidence = confidence;
+                return bet;
+            
+
+        }
+
+        List<PossibleBet> ValidateFixture(Fixture fixture, TipsterSetup bot, BetType bet, League league, PossibleBet theBet)
         {
             var id = -1;
             if (bet == BetType.HomeWin || bet == BetType.AwayWin || bet == BetType.Draw)
@@ -112,7 +339,7 @@ namespace Insight.Data_Fetchers
             // btts
             // over 1
             // player to score
-            // half with most girls
+            // half with most goals
 
 
             foreach (var config in configs)
@@ -121,12 +348,18 @@ namespace Insight.Data_Fetchers
                 {
                     case BetType.HomeWin:
                         var possibleBet = CalculateBetConfidence(fixture, config, league, BetType.HomeWin);
-                        if (possibleBet.Confidence > int.Parse(config["Confidence"].ToString())) { return new List<PossibleBet> { possibleBet }; }
+                        if (possibleBet.Confidence > 54) { return new List<PossibleBet> { possibleBet }; }
                         break;
                     case BetType.AwayWin:
                         possibleBet = CalculateBetConfidence(fixture, config, league, BetType.AwayWin);
-                        if (possibleBet.Confidence > int.Parse(config["Confidence"].ToString())) { return new List<PossibleBet> { possibleBet }; }
+                        if (possibleBet.Confidence > 65) { return new List<PossibleBet> { possibleBet }; }
                         break;
+                    //case BetType.Draw:
+                    //    var possibleBetH = CalculateBetConfidence(fixture, config, league, BetType.HomeWin);
+                    //    var possibleBetA = CalculateBetConfidence(fixture, config, league, BetType.AwayWin);
+                    //    theBet.Confidence = 100 - (5 * Math.Abs(possibleBetH.Confidence - possibleBetA.Confidence));
+                    //    if (Math.Abs(possibleBetH.Confidence - possibleBetA.Confidence) < 3) { return new List<PossibleBet> { theBet }; }
+                    //    break;
                 }
             }
 
@@ -199,7 +432,28 @@ namespace Insight.Data_Fetchers
                 var tableDiff = oppPos - selPos;
                 if(tableDiff < 0)
                 {
-                    if(tableDiff > -(table.Count / 5)) { tableDiff *= -1; }
+                    if(tableDiff > -(table.Count / 5)) { tableDiff *= -1; }else { tableDiff = 0; }
+                }
+
+                int locOppositionGoals = 0;
+                List<Fixture> oppositionGamesLoc;
+                if(fixture.HomeTeam == oppositionTeam)
+                {
+                    // get home games only
+                    oppositionGamesLoc = allResults.Where(res => res.HomeTeam == oppositionTeam).ToList();
+                    foreach (var game in oppositionGamesLoc)
+                    {
+                        locOppositionGoals += game.AwayScore;
+                    }
+                }
+                else
+                {
+                    // get away games only
+                    oppositionGamesLoc = allResults.Where(res => res.AwayTeam == oppositionTeam).ToList();
+                    foreach (var game in oppositionGamesLoc)
+                    {
+                        locOppositionGoals += game.HomeScore;
+                    }
                 }
 
                 var oppositionGames = allResults.Where(res => res.HomeTeam == oppositionTeam || res.AwayTeam == oppositionTeam).ToList();
@@ -210,20 +464,25 @@ namespace Insight.Data_Fetchers
                 }
 
                 var tableFactor = ((float)tableDiff) / ((float)league.NumTeams * 2.5f);
-                var concededFactor = (float) totalOppositionGoals / (oppositionGames.Count*2.5f);
+                var concededFactor = (float) totalOppositionGoals / (oppositionGames.Count*2.25f);
+                var concededFactorLoc = (float) locOppositionGoals / (oppositionGamesLoc.Count*2.25f);
 
-                const int TABLE_WEIGHT = 24;
+                const int TABLE_WEIGHT = 22;
                 const int GOALS_PER_GAME_WEIGHT = 36;
-                const int OPPOSITION_CONCEDED = 40;
+                const int OPPOSITION_CONCEDED_WEIGHT = 18;
+                const int OPPOSITION_CONCEDED_LOC_WEIGHT = 24;
 
                 var confidence = (GOALS_PER_GAME_WEIGHT * gpg)
-                               + (OPPOSITION_CONCEDED * concededFactor)
+                               + (OPPOSITION_CONCEDED_WEIGHT * concededFactor)
+                               + (OPPOSITION_CONCEDED_LOC_WEIGHT * concededFactorLoc)
                                + (TABLE_WEIGHT * tableFactor);
+
+
+                confidence += new Random().Next(-5, 3);
 
                 bet.Confidence = confidence;
                 list.Add(bet);
             }
-
 
             return list;
         }
@@ -298,7 +557,10 @@ namespace Insight.Data_Fetchers
             if (pointDifference < 0)
             {
                 if (pointDifference >= -3) { pointDifference *= -1; }
-                else { pointDifference = 0; }
+                else
+                {
+                    pointDifference = 0;
+                }
             }
             var pointsFactor = (float)pointDifference / ((float)totalAvailablePoints / 1.4f);
 
@@ -307,7 +569,10 @@ namespace Insight.Data_Fetchers
             if (tablePos < 0)
             {
                 if (tablePos >= -5) { tablePos *= -1; }
-                else { tablePos = 0; }
+                else
+                {
+                    tablePos = 0;
+                }
             }
             var tableFactor = ((float)tablePos) / ((float)league.NumTeams * 2.5f);
 
@@ -317,17 +582,27 @@ namespace Insight.Data_Fetchers
             if (pointDifferenceLoc < 0)
             {
                 if (pointDifferenceLoc >= -3) { pointDifferenceLoc *= -1; }
-                else { pointDifferenceLoc = 0; }
+                else
+                {
+                    pointDifferenceLoc = 0;
+                }
             }
             var pointsFactorLoc = (float)pointDifferenceLoc / ((float)totalAvailablePointsLoc / 1.4f);
 
-            const int TABLE_WEIGHT = 19;
-            const int POINTS_WEIGHT = 46;
-            const int LOCATIONAL_POINTS_WEIGHT = 35;
+            const int TABLE_WEIGHT = 32;
+            const int POINTS_WEIGHT = 24;
+            const int LOCATIONAL_POINTS_WEIGHT = 44;
 
             var confidence = (POINTS_WEIGHT * pointsFactor)
                            + (LOCATIONAL_POINTS_WEIGHT * pointsFactorLoc)
                            + (TABLE_WEIGHT * tableFactor);
+
+            //confidence += new Random().Next(-5, 5);
+
+            if(theBet.HomeTeam == "Notts County" || theBet.AwayTeam == "Notts County" || theBet.HomeTeam == "Forest Green")
+            {
+                var v = 0;
+            }
 
             theBet.Confidence = confidence;
 

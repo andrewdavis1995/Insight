@@ -56,25 +56,25 @@
         <custom:BarChartItem Grid.Column="18"/>
         <custom:BarChartItem Grid.Column="19"/>
         <Label Grid.Column="9" Background="#55000000" Width="3" VerticalAlignment="Bottom" Height="20"></Label>
-        <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">5'</Label>
-        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">10'</Label>
-        <Label Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">15'</Label>
-        <Label Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">20'</Label>
-        <Label Grid.Column="4" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">25'</Label>
-        <Label Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">30'</Label>
-        <Label Grid.Column="6" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">35'</Label>
-        <Label Grid.Column="7" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">40'</Label>
-        <Label Grid.Column="8" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">45'</Label>
-        <Label Grid.Column="10" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">50'</Label>
-        <Label Grid.Column="11" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">55'</Label>
-        <Label Grid.Column="12" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">60'</Label>
-        <Label Grid.Column="13" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">65'</Label>
-        <Label Grid.Column="14" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">70'</Label>
-        <Label Grid.Column="15" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">75'</Label>
-        <Label Grid.Column="16" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">80'</Label>
-        <Label Grid.Column="17" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">85'</Label>
-        <Label Grid.Column="18" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">90'</Label>
-        <Label Grid.Column="19" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">90+'</Label>
+        <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">5'</Label>
+        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">10'</Label>
+        <Label Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">15'</Label>
+        <Label Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">20'</Label>
+        <Label Grid.Column="4" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">25'</Label>
+        <Label Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">30'</Label>
+        <Label Grid.Column="6" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">35'</Label>
+        <Label Grid.Column="7" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">40'</Label>
+        <Label Grid.Column="8" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">45'</Label>
+        <Label Grid.Column="10" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">50'</Label>
+        <Label Grid.Column="11" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">55'</Label>
+        <Label Grid.Column="12" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">60'</Label>
+        <Label Grid.Column="13" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">65'</Label>
+        <Label Grid.Column="14" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">70'</Label>
+        <Label Grid.Column="15" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">75'</Label>
+        <Label Grid.Column="16" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">80'</Label>
+        <Label Grid.Column="17" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">85'</Label>
+        <Label Grid.Column="18" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">90'</Label>
+        <Label Grid.Column="19" Grid.Row="1" VerticalAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel" Foreground="#070707" FontSize="9" HorizontalAlignment="Center" Height="Auto">90+'</Label>
    
         
     </Grid>

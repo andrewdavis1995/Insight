@@ -18,8 +18,8 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" FontFamily="/Insight;component/Fonts/#Lato" Foreground="#181818" FontSize="16" Name="txtName">Bet Type Name</Label>
-            <Label Grid.Row="1" FontFamily="/Insight;component/Fonts/#Lato" Foreground="{DynamicResource TextBrush}" FontSize="9" Name="txtDescription">Here is a description</Label>
+            <Label Grid.Row="0" FontFamily="/Insight;component/Fonts/#Abel" Foreground="#181818" FontSize="16" Name="txtName">Bet Type Name</Label>
+            <Label Grid.Row="1" FontFamily="/Insight;component/Fonts/#Abel" Foreground="{DynamicResource TextBrush}" FontSize="9" Name="txtDescription">Here is a description</Label>
         </Grid>
 
         <Label></Label>

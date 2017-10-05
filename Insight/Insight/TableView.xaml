@@ -16,12 +16,12 @@
             <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
 
-        <Image Margin="5" Grid.Column="1" Name="imgBadge"></Image>
-        <TextBlock Name="lblPosition" Grid.Column="0" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="8, 0, 2, 0" FontFamily="pack://application:,,,/Fonts/#Lato">1.</TextBlock>
-        <TextBlock Name="lblTeam" Grid.Column="2" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="8, 0, 0, 0" FontFamily="pack://application:,,,/Fonts/#Lato">Team Name</TextBlock>
-        <TextBlock Name="lblGames" Grid.Column="3" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">38</TextBlock>
-        <TextBlock Name="lblGoalDiff" Grid.Column="4" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
-        <TextBlock Name="lblPoints" Grid.Column="5" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Lato">108</TextBlock>
+        <Image Margin="5" Grid.Column="1" Name="imgBadge" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+        <TextBlock Name="lblPosition" Grid.Column="0" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="8, 0, 2, 0" FontFamily="pack://application:,,,/Fonts/#Abel">1.</TextBlock>
+        <TextBlock Name="lblTeam" Grid.Column="2" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="8, 0, 0, 0" FontFamily="pack://application:,,,/Fonts/#Abel">Team Name</TextBlock>
+        <TextBlock Name="lblGames" Grid.Column="3" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">38</TextBlock>
+        <TextBlock Name="lblGoalDiff" Grid.Column="4" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">108</TextBlock>
+        <TextBlock Name="lblPoints" Grid.Column="5" Foreground="{DynamicResource TextBrush}" FontSize="15" VerticalAlignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" FontFamily="pack://application:,,,/Fonts/#Abel">108</TextBlock>
 
     </Grid>
 </UserControl>

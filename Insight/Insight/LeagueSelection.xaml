@@ -27,8 +27,8 @@
 
         <Grid MouseDown="LeagueClicked" Tag="Premier League" Grid.Row="1" Grid.Column="1" Background="#ffffff" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10">
             <StackPanel>
-                <TextBlock x:Name="TitlePremiership" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Premier League" Foreground="#0f0f0f" VerticalAlignment="Top"/>
-                <TextBlock x:Name="TeamsPremiership" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="20 teams" Foreground="#121212" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TitlePremiership" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Premier League" Foreground="#0f0f0f" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TeamsPremiership" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="20 teams" Foreground="#121212" VerticalAlignment="Top"/>
             </StackPanel>
         </Grid>
         <Grid MouseDown="LeagueClicked" Tag="Championship" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10">
@@ -36,8 +36,8 @@
                 <SolidColorBrush Color="White"/>
             </Grid.Background>
             <StackPanel>
-                <TextBlock x:Name="TitleChampionship" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" Text="Championship" Foreground="#0f0f0f" VerticalAlignment="Top"/>
-                <TextBlock x:Name="TeamsChampionship" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="24 teams" Foreground="#121212" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TitleChampionship" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" Text="Championship" Foreground="#0f0f0f" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TeamsChampionship" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="24 teams" Foreground="#121212" VerticalAlignment="Top"/>
             </StackPanel>
         </Grid>
         <Grid MouseDown="LeagueClicked" Tag="League One" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10">
@@ -45,8 +45,8 @@
                 <SolidColorBrush Color="White"/>
             </Grid.Background>
             <StackPanel>
-                <TextBlock x:Name="TitleLeagueOne" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="League One" Foreground="#0f0f0f" VerticalAlignment="Top"/>
-                <TextBlock x:Name="TeamsLeagueOne" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="24 teams" Foreground="#121212" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TitleLeagueOne" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="League One" Foreground="#0f0f0f" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TeamsLeagueOne" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="24 teams" Foreground="#121212" VerticalAlignment="Top"/>
             </StackPanel>
         </Grid>
         <Grid MouseDown="LeagueClicked" Tag="League Two" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10">
@@ -54,8 +54,8 @@
                 <SolidColorBrush Color="White"/>
             </Grid.Background>
             <StackPanel>
-                <TextBlock x:Name="TitleLeagueTwo" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="League Two" Foreground="#0f0f0f" VerticalAlignment="Top"/>
-                <TextBlock x:Name="TeamsLeagueTwo" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="24 teams" Foreground="#121212" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TitleLeagueTwo" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="League Two" Foreground="#0f0f0f" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TeamsLeagueTwo" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="24 teams" Foreground="#121212" VerticalAlignment="Top"/>
             </StackPanel>
         </Grid>
         <Grid MouseDown="LeagueClicked" Tag="Scottish Premier League" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10">
@@ -63,8 +63,8 @@
                 <SolidColorBrush Color="White"/>
             </Grid.Background>
             <StackPanel>
-                <TextBlock x:Name="TitleScottishPremiership" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Scottish Premier League" Foreground="#0f0f0f" VerticalAlignment="Top"/>
-                <TextBlock x:Name="TeamsScottishPremiership" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="12 teams" Foreground="#121212" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TitleScottishPremiership" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Scottish Premier League" Foreground="#0f0f0f" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TeamsScottishPremiership" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="12 teams" Foreground="#121212" VerticalAlignment="Top"/>
             </StackPanel>
         </Grid>
         <Grid MouseDown="LeagueClicked" Tag="Scottish Championship" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10">
@@ -72,10 +72,14 @@
                 <SolidColorBrush Color="White"/>
             </Grid.Background>
             <StackPanel>
-                <TextBlock x:Name="TitleScottishChampionship" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Scottish Championship" Foreground="#0f0f0f" VerticalAlignment="Top"/>
-                <TextBlock x:Name="TeamsScottishChampionship" FontFamily="pack://application:,,,/Fonts/#Lato" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="10 teams" Foreground="#121212" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TitleScottishChampionship" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="28" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Scottish Championship" Foreground="#0f0f0f" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TeamsScottishChampionship" FontFamily="pack://application:,,,/Fonts/#Abel" FontSize="20" TextAlignment="Center" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="10 teams" Foreground="#121212" VerticalAlignment="Top"/>
             </StackPanel>
         </Grid>
 
+        <Button x:Name="cmdBack" Content="Back" Click="cmdBack_Click" Width="200" HorizontalAlignment="Left"/>
+
+        
+        
     </Grid>
 </Window>

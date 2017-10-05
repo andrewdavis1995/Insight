@@ -1,0 +1,67 @@
+﻿<Window x:Class="Insight.SelectionScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Insight"
+        xmlns:views="clr-namespace:Insight.Views"
+        mc:Ignorable="d" Title="Insight" Height="900" Width="1300" ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None" Background="{DynamicResource TertiaryBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Background="#22000000">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Abel" Content="&lt;" Foreground="#eaeaea" Name="cmdLeft" MouseDown="cmdLeft_MouseDown"></Label>
+            <Label Grid.Column="1" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Abel" Name="lblDate" Foreground="#eaeaea">Monday 1st August 2017</Label>
+            <Label Grid.Column="2" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Abel" Content="&gt;" Foreground="#eaeaea" Name="cmdRight" MouseDown="cmdRight_MouseDown"/>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="#12000000">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" FontFamily="Abel" Foreground="#eaeaea" Margin="20, 40">Top Tips</Label>
+
+                <views:TipDisplay Grid.Row="1" Grid.Column="0" x:Name="TipDisplay1"></views:TipDisplay>
+                <views:TipDisplay Grid.Row="1" Grid.Column="1" x:Name="TipDisplay2"></views:TipDisplay>
+                <views:TipDisplay Grid.Row="1" Grid.Column="2" x:Name="TipDisplay3"></views:TipDisplay>
+
+            </Grid>
+
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+
+                <StackPanel Background="#34000000" Name="stckOtherTips">
+                    <Label Background="#45000000" FontSize="14" Padding="4, 0" Height="35" FontFamily="Abel" Foreground="#eaeaea" VerticalContentAlignment="Center">Other Tips:</Label>
+                </StackPanel>
+
+            </ScrollViewer>
+        </Grid>
+
+    </Grid>
+</Window>

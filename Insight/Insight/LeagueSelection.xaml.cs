@@ -37,5 +37,12 @@ namespace Insight
             lv.Show();
 
         }
+        
+        private void cmdBack_Click(object sender, RoutedEventArgs e)
+        {
+            Owner.Show();
+            Close();
+        }
+
     }
 }

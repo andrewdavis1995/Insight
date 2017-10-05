@@ -50,6 +50,26 @@ namespace Insight.Models
             return numerator / denominator;
         }
 
+        public string GetOutput()
+        {
+            switch (Type)
+            {
+                case BetType.HomeWin:
+                    return HomeTeam + " to win";
+                case BetType.AwayWin:
+                    return AwayTeam + " to win";
+                case BetType.BTTS:
+                    return "Both Teams To Score";
+                case BetType.Over1AndAHalf:
+                    return "Over 1.5 Goals";
+                case BetType.ToScoreIn90:
+                    return Player + " to score";
+            }
+
+            return "";
+
+        }
+
     }
 
     public enum BetType

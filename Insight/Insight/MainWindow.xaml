@@ -31,13 +31,11 @@
                 <ColumnDefinition Width="175"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
-            <custom:MenuButton Grid.Column="1" Grid.Row="1" x:Name="cmdNewSetup" MouseDown="CreateSetup"></custom:MenuButton>
-            <custom:MenuButton Grid.Column="2" Grid.Row="1" x:Name="cmdViewSetups"></custom:MenuButton>
             <custom:MenuButton Grid.Column="3" Grid.Row="1" x:Name="cmdStats"></custom:MenuButton>
             <custom:MenuButton Grid.Column="4" Grid.Row="1" x:Name="cmdCompetitions" MouseDown="ViewCompetitions"></custom:MenuButton>
-            <custom:MenuButton Grid.Column="1" Grid.Row="2" x:Name="cmdCurrentBets" MouseDown="cmdCurrentBets_MouseDown"></custom:MenuButton>
-            <custom:MenuButton Grid.Column="2" Grid.Row="2" x:Name="cmdBets"></custom:MenuButton>
+            <custom:MenuButton Grid.Column="1" Grid.Row="1" x:Name="cmdCurrentBets" MouseDown="cmdCurrentBets_MouseDown"></custom:MenuButton>
+            <custom:MenuButton Grid.Column="2" Grid.Row="1" x:Name="cmdBets" MouseDown="cmdBets_MouseDown"></custom:MenuButton>
+            <custom:MenuButton Grid.Column="1" Grid.Row="2" x:Name="cmdFixtures" MouseDown="cmdFixtures_MouseDown"></custom:MenuButton>
 
 
         </Grid>
@@ -65,7 +63,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock x:Name="cmdLeftChevron" MouseDown="MoveLeft" Grid.Column="0" Margin="3" TextWrapping="Wrap" Text="&lt;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="{DynamicResource TextBrush}"/>
-                <TextBlock x:Name="txtCompetitionName" Grid.Column="1" Margin="3" TextWrapping="Wrap" Text="Championship" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="{DynamicResource TextBrush}" FontFamily="pack://application:,,,/Fonts/#Lato"/>
+                <TextBlock x:Name="txtCompetitionName" Grid.Column="1" Margin="3" TextWrapping="Wrap" Text="Championship" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="{DynamicResource TextBrush}" FontFamily="pack://application:,,,/Fonts/#Abel"/>
                 <TextBlock x:Name="cmdRightChevron" MouseDown="MoveRight" Grid.Column="2" Margin="3" TextWrapping="Wrap" Text=">" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="{DynamicResource TextBrush}"/>
               
             </Grid>

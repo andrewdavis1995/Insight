@@ -27,8 +27,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <RadioButton Margin="10, 3" Name="rdBtn1" FontFamily="Lato" IsChecked="True" GroupName="SelectionGroup" Checked="rdBtn1_Checked">Do a thing</RadioButton>
-                <RadioButton Grid.Row="1" Margin="10, 3" Name="rdBtn2" FontFamily="Lato" GroupName="SelectionGroup" Checked="rdBtn2_Checked">Do a different thing</RadioButton>
+                <RadioButton Margin="10, 3" Name="rdBtn1" FontFamily="Abel" IsChecked="True" GroupName="SelectionGroup" Checked="rdBtn1_Checked">Do a thing</RadioButton>
+                <RadioButton Grid.Row="1" Margin="10, 3" Name="rdBtn2" FontFamily="Abel" GroupName="SelectionGroup" Checked="rdBtn2_Checked">Do a different thing</RadioButton>
             </Grid>
 
 

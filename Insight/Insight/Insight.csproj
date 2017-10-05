@@ -71,11 +71,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\DateConverter.cs" />
+    <Compile Include="Converters\OddConverter.cs" />
     <Compile Include="Data Fetchers\AliasFetcher.cs" />
+    <Compile Include="Data Fetchers\DateHandler.cs" />
     <Compile Include="Data Fetchers\OddsFetcher.cs" />
     <Compile Include="Data Fetchers\ResultsFetcher.cs" />
     <Compile Include="Data Fetchers\StatFetcher.cs" />
     <Compile Include="Data Fetchers\SuggestionFetcher.cs" />
+    <Compile Include="FixturePage.xaml.cs">
+      <DependentUpon>FixturePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Holders\LeagueHolder.cs" />
     <Compile Include="LeagueSelection.xaml.cs">
       <DependentUpon>LeagueSelection.xaml</DependentUpon>
@@ -93,10 +98,17 @@
     <Compile Include="Models\PossibleBet.cs" />
     <Compile Include="Models\RedCard.cs" />
     <Compile Include="Models\ScorerBet.cs" />
+    <Compile Include="Models\Selection.cs" />
     <Compile Include="Models\Stat.cs" />
     <Compile Include="Models\TeamResult.cs" />
     <Compile Include="Models\TipsterSetup.cs" />
     <Compile Include="Models\TopScorer.cs" />
+    <Compile Include="PreviousTipPage.xaml.cs">
+      <DependentUpon>PreviousTipPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionScreen.xaml.cs">
+      <DependentUpon>SelectionScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TableViewHeader.xaml.cs">
       <DependentUpon>TableViewHeader.xaml</DependentUpon>
     </Compile>
@@ -105,11 +117,18 @@
     </Compile>
     <Compile Include="UI Fetcher\BadgeFetcher.cs" />
     <Compile Include="UI Fetcher\IconFetcher.cs" />
+    <Compile Include="UI Fetcher\ShieldFetcher.cs" />
     <Compile Include="Views\BarChartItem.xaml.cs">
       <DependentUpon>BarChartItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BetTypeSelection.xaml.cs">
       <DependentUpon>BetTypeSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalendarDayView.xaml.cs">
+      <DependentUpon>CalendarDayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalendarView.xaml.cs">
+      <DependentUpon>CalendarView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ConfigCheckbox.xaml.cs">
       <DependentUpon>ConfigCheckbox.xaml</DependentUpon>
@@ -119,6 +138,9 @@
     </Compile>
     <Compile Include="Views\DoubleBarGraph.xaml.cs">
       <DependentUpon>DoubleBarGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FixtureViewLarge.xaml.cs">
+      <DependentUpon>FixtureViewLarge.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LargeTableHeader.xaml.cs">
       <DependentUpon>LargeTableHeader.xaml</DependentUpon>
@@ -153,12 +175,28 @@
     <Compile Include="TableView.xaml.cs">
       <DependentUpon>TableView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TeamNameDisplay.xaml.cs">
+      <DependentUpon>TeamNameDisplay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TeamView.xaml.cs">
       <DependentUpon>TeamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TipComponentDisplay.xaml.cs">
+      <DependentUpon>TipComponentDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TipDisplaySmall.xaml.cs">
+      <DependentUpon>TipDisplaySmall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TipDisplay.xaml.cs">
+      <DependentUpon>TipDisplay.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TipView.xaml.cs">
       <DependentUpon>TipView.xaml</DependentUpon>
     </Compile>
+    <Page Include="FixturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LeagueSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +223,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PreviousTipPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectionScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TableViewHeader.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -201,6 +247,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CalendarDayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalendarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ConfigCheckbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,6 +264,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DoubleBarGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FixtureViewLarge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -257,7 +315,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\TeamNameDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TeamView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TipComponentDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TipDisplaySmall.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TipDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -292,6 +366,7 @@
     <Resource Include="Fonts\Lato-Italic.ttf" />
     <Resource Include="Fonts\Lato-Light.ttf" />
     <Resource Include="Fonts\Lato-Regular.ttf" />
+    <Resource Include="Fonts\Abel-Regular.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -331,6 +406,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\over1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\longshot.png" />
+    <Resource Include="Resources\scorer.png" />
+    <Resource Include="Resources\value.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\acca.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -117,7 +117,7 @@ namespace Insight
 
             Uri Uri = new Uri("pack://application:,,,/Insight;component/Fonts/", UriKind.RelativeOrAbsolute);
 
-            l.FontFamily = new FontFamily(Uri, "Lato-Regular.tff");
+            l.FontFamily = new FontFamily(Uri, "Abel-Regular.tff");
             l.FontSize = 12;
             l.MouseDown += ShowConfig;
             l.Height = 40;
@@ -165,7 +165,7 @@ namespace Insight
                 // todo: get any existing details
                 AddSliderBarWithToggle("Number of games to consider", 1, 10, 1, 3, "Consider full season", "Consider recent form", "Games_Considered");
                 AddCheckbox("Home games only", false, "Home_Only");
-                AddCheckbox("Combine bets into accumulators", true, "Accumulators");
+                AddCheckbox("Combine bets into Accumulators", true, "Accumulators");
                 AddSlider("Minimum confidence level", 1, 100, 1, 50, "Confidence");
             }
 
@@ -269,5 +269,14 @@ namespace Insight
             cmdLeagues.BorderThickness = new Thickness(0, 0, 0, 0);
             cmdComponents.BorderThickness = new Thickness(0, 0, 0, 4);
         }
+
+
+
+        private void cmdBack_Click(object sender, RoutedEventArgs e)
+        {
+            Owner.Show();
+            Close();
+        }
+
     }
 }

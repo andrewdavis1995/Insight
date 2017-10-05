@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Insight.Views.TipComponentDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CallBacksWithUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" d:DesignWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Name="imgType" Margin="3" Grid.Column="0"></Image>
+        <Image Name="imgInfo" Margin="3" Grid.Column="2"></Image>
+        <Image Name="imgSelected" Margin="3" Grid.Column="3"></Image>
+
+        <Grid Grid.Column="0" Margin="10, 0, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Name="imgHome" Margin="3" MaxHeight="22"></Image>
+            <Image Name="imgAway" Margin="3" Grid.Row="1" MaxHeight="22"></Image>
+
+        </Grid>
+
+        <Grid Grid.Column="1" VerticalAlignment="Center" Margin="8, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="txtWhat" Foreground="#eaeaea" FontSize="12.5" FontFamily="Abel">What it is</TextBlock>
+            <TextBlock Name="txtDescription" Grid.Row="1" Foreground="#989898" FontSize="10" FontFamily="Abel">Description + How much?</TextBlock>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -41,6 +41,9 @@ namespace Insight
             {
                 case BetType.HomeWin: return "Home Win";
                 case BetType.AwayWin: return "Away Win";
+                case BetType.BTTS: return "Both Teams To Score";
+                case BetType.Over1AndAHalf: return "Over 1.5 Goals";
+                case BetType.Draw: return "Draw";
                 case BetType.ToScoreIn90: return "Player to score";
                 default: return "Bet";
             }
@@ -50,12 +53,15 @@ namespace Insight
         {
             selections = selections.OrderByDescending(s => s.Confidence).ToList();
 
-            for(var i = 0; i < selections.Count && i < 15; i++)
+            for(var i = 0; i < selections.Count; i++)
             {
                 var tipView = new TipView();
                 tipView.lblBetType.Text = GetBetTypeString(selections[i].Type);
                 tipView.lblDate.Text = selections[i].When.Split('@')[0].ToString();
                 tipView.lblOdds.Text = selections[i].Odds;
+                tipView.Tag = i.ToString();
+                tipView.Height = 250;
+                tipView.MouseDown += TipView_MouseDown;
                 tipView.lblPlayer.Text = selections[i].Player;
                 tipView.lblProgress.Width = (selections[i].Confidence / 100) * 240;
                 tipView.lblFixture.Text = selections[i].HomeTeam + " vs. " + selections[i].AwayTeam;
@@ -65,10 +71,25 @@ namespace Insight
             }
         }
 
+        private void TipView_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var tag = ((TipView)sender).Tag.ToString();
+            var id = int.Parse(tag);
+
+            var tip = selections[id];
+
+            FixturePopup.Visibility = Visibility.Visible;
+            lblFixture.Content = tip.HomeTeam + " vs. " + tip.AwayTeam;
+        }
+
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
             Owner.Show();
             Close();
+        }
+        private void cmdClose_Click(object sender, RoutedEventArgs e)
+        {
+            FixturePopup.Visibility = Visibility.Hidden;
         }
     }
 }

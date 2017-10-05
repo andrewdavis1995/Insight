@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Image x:Name="imgIcon" Margin="20, 20, 20, 10" Source="/Insight;component/Resources/trophy.png"></Image>
-        <TextBlock x:Name="txtTitle" Grid.Row="1" VerticalAlignment="Center" Foreground="White" FontSize="18" HorizontalAlignment="Center" Margin="10" FontFamily="pack://application:,,,/Fonts/#Lato">Title</TextBlock>
+        <TextBlock x:Name="txtTitle" Grid.Row="1" VerticalAlignment="Center" Foreground="White" FontSize="18" HorizontalAlignment="Center" Margin="10" FontFamily="pack://application:,,,/Fonts/#Abel">Title</TextBlock>
         
     </Grid>
 </UserControl>
